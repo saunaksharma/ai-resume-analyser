@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-
+import pandas as pd
 # Page config
 st.set_page_config(page_title="AI Resume Booster", layout="wide")
 
