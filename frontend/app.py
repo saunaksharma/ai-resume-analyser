@@ -1,6 +1,5 @@
 import streamlit as st
 import requests
-import pandas as pd
 # Page config
 st.set_page_config(page_title="AI Resume Booster", layout="wide")
 
@@ -95,6 +94,14 @@ if file and st.button("🚀 Analyze Resume"):
             st.text(data["analysis"])
         else:
             st.error("No analysis received")
+
+        # =============================
+        # 🎯 JD MATCH ANALYSIS
+        # =============================
+        if jd and data.get("jd_analysis"):
+            st.divider()
+            st.markdown("## 🎯 Job Description Match Analysis")
+            st.text(data["jd_analysis"])
 
     except Exception as e:
         st.error(f"Error: {e}")

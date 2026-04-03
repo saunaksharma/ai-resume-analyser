@@ -33,9 +33,10 @@ async def analyze(
     # 🔥 JD MATCHING
     match_score = None
     missing_skills = []
+    jd_analysis = None
 
     if jd:
-        match_score, missing_skills = match_resume_with_jd(text, jd)
+        match_score, missing_skills, jd_analysis = match_resume_with_jd(text, jd)
 
     # 🤖 LLM ANALYSIS
     result = analyze_resume(text)
@@ -45,5 +46,6 @@ async def analyze(
         "ats_score": ats_score,
         "details": details,
         "match_score": match_score,
-        "missing_skills": missing_skills
+        "missing_skills": missing_skills,
+        "jd_analysis": jd_analysis
     }
